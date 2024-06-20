@@ -2,11 +2,223 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anwesh Maile</title>
+    <meta name="author" content="Anwesh Maile">
+    <meta name="description" content="Bioinformatics Tutorials - Microbial Genomics & Metagenomics">
+    <meta name="keywords" content="NGS, metagenomics, genomics, bacteria, microorganisms, microbes, bioinformatics, Shotgun metagenomics, tutorials">
+
+    <!-- Bootstrap Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Bootstrap Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Additional Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <title>Analysis Venue</title>
 </head>
 <body>
-    <h2>Gearing Up...</h2>
-    <p><a href="../silva-138_classifiers/index.html" target="_blank">Silva 138 Classifiers</a></p>
+    <!-- Nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid mx-5">
+            <!-- Logo for smaller screens -->
+            <a class="navbar-brand text-uppercase d-lg-none" href="index.html">
+                <img src="assets/images/Logos/Logo_INCEN_Black120.png" alt="Logo" class="img-fluid">
+            </a>
+            <div>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="bi bi-list fs-3"></i>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse justify-content-around" id="navbarCollapse">
+                <ul class="navbar-nav mx-auto gap-lg-5 fs-5">
+                    <!-- All Tutorials -->
+                    <li class="nav-item dropdown my-auto">
+                        <a class="nav-link" aria-current="page" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-bacteria"></i>
+                        </a>
+                        <ul class="dropdown-menu animate slideIn">
+                            <li><a href="bgap.html" class="dropdown-item">BGA Pipeline</a></li>
+                            <li><a href="#" class="dropdown-item">Amplicon NGS</a></li>
+                            <li><a href="#" class="dropdown-item">Shotgun MG</a></li>
+                        </ul>
+                    </li>
+                    <!-- Basics -->
+                    <li class="nav-item my-auto">
+                        <a class="nav-link" aria-current="page" href="#" data-bs-toggle="tooltip", data-bs-placement="bottom", data-bs-title="The Basics...">
+                            <i class="bi bi-journal-text"></i>
+                        </a>
+                    </li>
+                    <!-- Centered logo for large screens -->
+                    <!-- <a class="navbar-brand text-uppercase mx-auto d-none d-lg-block active" href="index.html" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="HOME">
+                        <img src="assets/images/Logos/Logo_INCEN_Blue120.png" alt="Logo" class="img-fluid">
+                    </a> -->
+                    <!-- Home -->
+                    <li class="nav-item my-auto">
+                        <a class="nav-link active" aria-current="page" href="index.html" data-bs-toggle="tooltip", data-bs-placement="bottom", data-bs-title="anw-sh.github.io">
+                            <i class="bi bi-house-door-fill"></i>
+                        </a>
+                    </li>
+                    <!-- The other side -->
+                    <li class="nav-item my-auto">
+                        <a class="nav-link" aria-current="page" href="#" data-bs-toggle="tooltip", data-bs-placement="bottom", data-bs-title="The Other Side...">
+                            <i class="bi bi-pc-display"></i>
+                        </a>
+                    </li>
+                    <!-- Profile -->
+                    <li class="nav-item my-auto">
+                        <a class="nav-link" aria-current="page" href="https://github.com/anw-sh" target="_blank" data-bs-toggle="tooltip", data-bs-placement="bottom", data-bs-title="Profile">
+                            <i class="bi bi-person-check"></i>
+                        </a>
+                    </li>
+                </ul>
+                <!--
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <section class="container my-5 p-5 px-lg-0">
+        <div class="row align-items-center gx-5 py-5">
+            <!-- Box Links -->
+            <div class="col-lg-11 mx-auto">
+                <!-- Row 1 -->
+                <div class="row justify-content-between gap-4 mb-4 h-100">
+                    <!-- Box left -->
+                    <div class="col shadow special-list-item rounded-4 p-4 bg-info text-white">
+                        <p class="lead fw-medium card-title"><a href="bgap.html" class="text-white"><i class="bi bi-journal-richtext"></i> The Basics... </a></p>
+                        <hr>
+                        <p class="card-text">
+                            Notes on
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="bgap.html" class="text-white"><i class="bi bi-arrow-right-circle-fill fadeInOut"></i> Sequencing technologies</a>
+                                </li>
+                                <li>
+                                    <a href="bgap.html" class="text-white"><i class="bi bi-arrow-right-circle-fill fadeInOut"></i> File formats</a>
+                                </li>
+                                <li>
+                                    <a href="bgap.html" class="text-white"><i class="bi bi-arrow-right-circle-fill fadeInOut"></i> Common terminology</a>
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
+                    <!-- Box center Banner -->
+                    <div class="col-md-6 p-4 bg-white text-center text-info">
+                        <h2 class="mb-0">
+                            <span class="fw-bold">analysis</span><span class="fw-lighter text-info-emphasis">Venue</span>
+                        </h2>
+                        <hr>
+                        <p class="card-text lead">NGS Data Analysis <br> Focussing on Microbial Data <br> Insights, Tutorials, Troubleshooting, and more...</p>
+                    </div>
+                    <!-- Box right -->
+                    <div class="col shadow special-list-item rounded-4 p-4 bg-accent3 bg-opacity-75 text-white">
+                        <p class="lead fw-medium card-title"><a href="#" class="text-white"><i class="bi bi-laptop"></i> The Other Side...</a></p>
+                        <hr>
+                        <p class="card-text">
+                            OS, tools and packages
+                            <ul class="list-unstyled test">
+                                <li>
+                                    <a href="bgap.html" class="text-white"><i class="fa-brands fa-linux fadeInOut"></i> Linux</a>
+                                </li>
+                                <li>
+                                    <a href="bgap.html" class="text-white"><i class="fa-brands fa-python fadeInOut"></i> Languages </a>
+                                </li>
+                                <li>
+                                    <a href="bgap.html" class="text-white"><i class="bi bi-boxes fadeInOut"></i> Package Managers</a>
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Row 2 -->
+                <div class="row justify-content-between gap-4 mb-4 h-100">
+                    <div class="col shadow special-list-item rounded-4 p-4 bg-primary text-white">
+                        <p class="lead fw-medium card-title">BGA Pipeline </p>
+                        <hr>
+                        <p class="card-text">
+                            Dealing with computers.
+                            <ul>
+                                <li>Installing Linux</li>
+                                <li>Using Anaconda</li>
+                                <li>Installing Required Packages</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="col shadow special-list-item rounded-4 p-4 bg-warning text-dark">
+                        <div class="row">
+                            <div class="col">
+                                <p class="lead fw-medium card-title">Amplicon NGS</p>
+                                <hr>
+                                <p class="card-text">Metabarcoding Analysis</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col shadow special-list-item rounded-4 p-4 bg-danger bg-opacity-75 text-dark">
+                        <p class="lead fw-medium card-title">Shotgun Metagenome</p>
+                        <hr>
+                        <p class="card-text">Analyzing the Complete Metagenomes</p>
+                    </div>
+                </div>
+                <p class="lead mt-5">And more...</p>
+                <!-- Row 3 -->
+                <div class="row justify-content-between gap-3 h-100">
+                    <div class="col shadow special-list-item rounded-4 p-4 bg-info bg-opacity-25 text-info-emphasis">
+                        <p class="lead fw-medium card-title">Troubleshooting</p>
+                        <hr>
+                        <p class="card-text">Solving Common Problems...</p>
+                    </div>
+                    <div class="col shadow special-list-item rounded-4 p-4 bg-info bg-opacity-25 text-info-emphasis">
+                        <p class="lead fw-medium card-title">SILVA Classifiers</p>
+                        <hr>
+                        <p class="card-text">Solving Common Problems...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="fs-5 text-muted fw-light text-center col-11 mx-auto mt-5">
+            Welcome to <span class="text-info">Analysis Venue</span> , a resource for gaining insights and solving problems related to NGS data analysis. <span class="h5 fw-medium text-info">An-V</span> will navigate you through the analysis of <mark>bacterial genomic & metagenomic</mark> data and will also provide troubleshooting guides for common problems related to the installation and usage of various packages or tools.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <div class="col-10 mx-auto">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-5 my-3 border-top">
+            <p class="col-lg-4 mb-0 text-muted">&copy; 2024</p>
+        
+            <a href="index.html" class="col-lg-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <img src="assets/images/Logos/Logo_INCEN_Black120.png" alt="">
+            </a>
+      
+            <ul class="nav col-lg-4 justify-content-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Genomics</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Metagenomics</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Others</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+            </ul>
+        </footer>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="assets/js/bootstrap.bundle.js"></script>
+
+    <!-- Font Awesome v6 JS -->
+    <script src="https://kit.fontawesome.com/64b7be69f4.js" crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/extended.js"></script>
+
 </body>
 </html>
