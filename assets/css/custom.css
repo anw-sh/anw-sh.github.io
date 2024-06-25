@@ -102,17 +102,6 @@ code, pre {
 
 /* Animated Dropdown Menu END */
 
-/* Fading content START */
-@keyframes fadeInOut {
-  from {
-    opacity: 30%;
-  }
-}
-
-.fadeInOut {
-  animation: 0.8s ease-in-out infinite alternate fadeInOut;
-}
-
 
 /*
 .navbar .active {

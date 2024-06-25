@@ -27,8 +27,9 @@
     <!-- Nav bar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-fluid mx-5">
-            <!-- Logo for smaller screens -->
-            <a class="navbar-brand d-lg-none" href="index.html"><span class="text-info special-text"><span class="fw-medium">an</span><span class="fw-light">V</span></span>
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+                <span class="text-info special-text"><span class="fw-medium">an</span><span class="fw-light">V</span></span>
                 <!-- <img src="assets/images/Logos/Logo_INCEN_Black120.png" alt="Logo" class="img-fluid"> -->
             </a>
             <div>
@@ -36,6 +37,7 @@
                     <i class="bi bi-list fs-3"></i>
                 </button>
             </div>
+            
             <div class="collapse navbar-collapse justify-content-around" id="navbarCollapse">
                 <ul class="navbar-nav mx-auto gap-lg-5 fs-5">
                     <!-- All Tutorials -->
@@ -55,10 +57,7 @@
                             <i class="bi bi-journal-text"></i>
                         </a>
                     </li>
-                    <!-- Centered logo for large screens -->
-                    <!-- <a class="navbar-brand text-uppercase mx-auto d-none d-lg-block active" href="index.html" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="HOME">
-                        <img src="assets/images/Logos/Logo_INCEN_Blue120.png" alt="Logo" class="img-fluid">
-                    </a> -->
+                    
                     <!-- Home -->
                     <li class="nav-item my-auto">
                         <a class="nav-link active" aria-current="page" href="index.html" data-bs-toggle="tooltip", data-bs-placement="bottom", data-bs-title="anw-sh.github.io">
@@ -78,12 +77,9 @@
                         </a>
                     </li>
                 </ul>
-                <!--
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-                -->
+                
+                <a href="#" class="btn btn-warning rounded-2 disabled" type="submit"><span class="small">Balancer</span></a>
+               
             </div>
         </div>
     </nav>
@@ -95,10 +91,23 @@
             <div class="col-lg-12 mx-auto">
                 <!-- Row 1 -->
                 <div class="row justify-content-between gap-4 mb-4 h-100">
-                    <!-- Box left -->
+                    <!-- Banner -->
+                    <div class="col-md-6 p-4 bg-white text-center text-info">
+                        <h2 class="mb-0 special-text">
+                            <span class="fw-semibold">analysis</span><span class="fw-lighter text-info-emphasis">Venue</span>
+                        </h2>
+                        <hr>
+                        <p class="mb-0 card-text lead">
+                            NGS Data Analysis <br> 
+                            Focussing on Microbial Data <br> 
+                            Insights, Tutorials, Troubleshooting, and more...
+                        </p>
+                        <p class="mb-0 text-end small text-muted fa-fade"><i>Content is being added...</i></p>
+                    </div>
+                    <!-- Box 1 -->
                     <div class="col shadow special-list-item rounded-4 p-4 bg-info text-white">
                         <p class="lead fw-medium card-title">
-                            <a href="#" class="text-white"><i class="bi bi-journal-richtext"></i> The Basics... </a>
+                            <a href="#" class="text-white fa-fade"><i class="bi bi-journal-richtext"></i> The Basics... </a>
                         </p>
                         <hr>
                         <p class="card-text">
@@ -116,22 +125,11 @@
                             </ul>
                         </p>
                     </div>
-                    <!-- Box center Banner -->
-                    <div class="col-md-6 p-4 bg-white text-center text-info">
-                        <h2 class="mb-0 special-text">
-                            <span class="fw-semibold">analysis</span><span class="fw-lighter text-info-emphasis">Venue</span>
-                        </h2>
-                        <hr>
-                        <p class="mb-0 card-text lead">
-                            NGS Data Analysis <br> 
-                            Focussing on Microbial Data <br> 
-                            Insights, Tutorials, Troubleshooting, and more...
-                        </p>
-                        <p class="mb-0 text-end small text-muted fadeInOut"><i>Content is being added...</i></p>
-                    </div>
-                    <!-- Box right -->
+                    <!-- Box 2 -->
                     <div class="col shadow special-list-item rounded-4 p-4 bg-accent2 text-white">
-                        <p class="lead fw-medium card-title"><a href="#" class="text-white"><i class="bi bi-laptop"></i> The Other Side...</a></p>
+                        <p class="lead fw-medium card-title">
+                            <a href="#" class="text-white fa-fade"><i class="bi bi-laptop"></i> The Other Side...</a>
+                        </p>
                         <hr>
                         <p class="card-text">
                             OS, tools and packages
@@ -154,7 +152,7 @@
                     <!-- Box left -->
                     <div class="col shadow special-list-item rounded-4 p-4 bg-warning text-dark">
                         <p class="lead fw-medium card-title">
-                            <a href="#" class="text-dark">Shotgun Metagenome Analysis </a>
+                            <a href="#" class="text-dark fa-fade">Shotgun Metagenome Analysis </a>
                         </p>
                         <hr>
                         <p class="card-text">
@@ -175,7 +173,7 @@
                     <!-- Box center -->
                     <div class="col shadow special-list-item rounded-4 p-4 bg-primary text-white">
                         <p class="lead fw-medium card-title">
-                            <a href="#" class="text-white">Ampli-seq Analysis </a>
+                            <a href="#" class="text-white fa-fade">Ampli-seq Analysis </a>
                         </p>
                         <hr>
                         <p class="card-text">
@@ -196,7 +194,7 @@
                     <!-- Box right -->
                     <div class="col shadow special-list-item rounded-4 p-4 bg-success text-white">
                         <p class="lead fw-medium card-title">
-                            <a href="#" class="text-white">BGA Pipeline </a>
+                            <a href="#" class="text-white fa-fade">BGA Pipeline </a>
                         </p>
                         <hr>
                         <p class="card-text">
@@ -217,14 +215,20 @@
                 </div>
                 <p class="lead mt-5">And...</p>
                 <!-- Row 3 -->
-                <div class="row justify-content-between gap-3 h-100">
+                <div class="row justify-content-between gap-4 h-100">
                     <div class="col-md-3 shadow special-list-item rounded-4 p-4 bg-warning bg-opacity-25 text-warning-emphasis">
                         <p class="lead fw-medium card-title">Utilities</p>
                         <hr>
-                        <p class="card-text">SILVA 138 Classifiers</p>
+                        <p class="card-text">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="silva/silva_138.html" class=" text-warning-emphasis"><i class="fa-solid fa-circle-arrow-right"></i> SILVA 138 Classifiers</a>
+                                </li>
+                            </ul>
+                        </p>
                     </div>
                     <div class="col shadow special-list-item rounded-4 p-4 bg-danger bg-opacity-25 text-danger-emphasis">
-                        <p class="lead fw-medium card-title">Troubleshooting</p>
+                        <p class="lead fw-medium card-title fa-fade">Troubleshooting</p>
                         <hr>
                         <p class="card-text">Solving Common Problems...</p>
                     </div>
@@ -239,20 +243,32 @@
     <!-- Footer -->
     <div class="col-10 mx-auto">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-5 my-3 border-top">
+            <!-- Left -->
             <p class="col-lg-4 mb-0 text-muted">
-                <script>document.write(/\d{4}/.exec(Date())[0])</script>
+                <script>document.write(/\d{4}/.exec(Date())[0])</script> |
+                <a href="index.html" class="link-dark special-text">
+                    <span class="fw-medium">an</span><span class="fw-light">V</span>
+                </a>
             </p>
-        
-            <a href="index.html" class="col-lg-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark special-text"><span class="fw-medium">an</span><span class="fw-light">V</span>
-                <!-- <img src="assets/images/Logos/Logo_INCEN_Black120.png" alt=""> -->
-            </a>
-      
+            <!-- Center -->
+            <ul class="nav col-lg-4 justify-content-center">
+                <li class="nav-item">
+                    <a href="https://www.linkedin.com/in/anwesh-maile-85346a27/" target="_blank" class="nav-link px-2 text-muted"><i class="fa-brands fa-linkedin"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://github.com/anw-sh" target="_blank" class="nav-link px-2 text-muted"><i class="fa-brands fa-github"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://scholar.google.com/citations?user=X885VYAAAAAJ&hl=en" target="_blank" class="nav-link px-2 text-muted"><i class="fa-brands fa-google-scholar"></i></a>
+                </li>
+            </ul>
+            <!-- Right -->
             <ul class="nav col-lg-4 justify-content-end">
-                <!-- <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">Home</a></li> -->
-                <!-- <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Genomics</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Metagenomics</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Others</a></li> -->
-                <li class="nav-item"><a href="https://github.com/anw-sh" class="nav-link px-2 text-muted">Anwesh Maile</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-muted">
+                        The Basics... <i class="bi bi-caret-right-fill"></i>
+                    </a>
+                </li>
             </ul>
         </footer>
     </div>
