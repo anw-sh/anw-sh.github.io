@@ -8,13 +8,18 @@
     <meta name="description" content="Bioinformatics - SILVA 138 classifiers made by using RESCRIPt and QIIME2">
     <meta name="keywords" content="SILVA database, silva 138 classifiers, SILVA 138, QIIME2, RESCRIPt, Feature Classifiers, Amplicon Sequencing, Microbiome Analysis, NGS, bacteria, microorganisms, microbes, bioinformatics, tutorials">
 
-    <!-- Highlight CSS for syntax highlighting in code snippets -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
-
     <!-- Bootstrap Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <!-- Bootstrap Icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <!-- Highlight CSS for syntax highlighting in code snippets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <link rel="stylesheet" href="../assets/css/atom-one-dark-reasonable.css">
+
+    <!-- Highlight-copy CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"
+    />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,36 +27,462 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 
     <!-- Additional Custom CSS -->
-    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <style>
+        a {
+            color: var(--bs-danger);
+        }
+    </style>
 
-    <title>Analysis Venue</title>
+    <title>anV - SILVA 138 classifiers</title>
 </head>
 <body>
-    
+    <!-- Nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid mx-5">
+            <!-- Logo -->
+            <a class="navbar-brand" href="../index.html">
+                <span class="text-info special-text"><span class="fw-medium">an</span><span class="fw-light">V</span></span>
+                <!-- <img src="assets/images/Logos/Logo_INCEN_Black120.png" alt="Logo" class="img-fluid"> -->
+            </a>
+            <div>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="bi bi-list fs-3"></i>
+                </button>
+            </div>
+            
+            <div class="collapse navbar-collapse justify-content-around" id="navbarCollapse">
+                <ul class="navbar-nav mx-auto gap-lg-5 fs-5">
+                    <!-- All Tutorials -->
+                    <li class="nav-item dropdown my-auto">
+                        <a class="nav-link" aria-current="page" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-bacteria"></i>
+                        </a>
+                        <ul class="dropdown-menu animate slideIn">
+                            <li><a href="#" class="dropdown-item">BGA Pipeline</a></li>
+                            <li><a href="#" class="dropdown-item">Amplicon NGS</a></li>
+                            <li><a href="#" class="dropdown-item">Shotgun MG</a></li>
+                        </ul>
+                    </li>
+                    <!-- Basics -->
+                    <li class="nav-item my-auto">
+                        <a class="nav-link" aria-current="page" href="#" data-bs-toggle="tooltip", data-bs-placement="bottom", data-bs-title="The Basics...">
+                            <i class="bi bi-journal-text"></i>
+                        </a>
+                    </li>
+                    
+                    <!-- Home -->
+                    <li class="nav-item my-auto">
+                        <a class="nav-link active" aria-current="page" href="silva_138.html" data-bs-toggle="tooltip", data-bs-placement="bottom", data-bs-title="silva classifiers">
+                            <i class="fa-brands fa-stripe-s"></i></i>
+                        </a>
+                    </li>
+                    <!-- The other side -->
+                    <li class="nav-item my-auto">
+                        <a class="nav-link" aria-current="page" href="#" data-bs-toggle="tooltip", data-bs-placement="bottom", data-bs-title="The Other Side...">
+                            <i class="bi bi-pc-display"></i>
+                        </a>
+                    </li>
+                    <!-- Profile -->
+                    <li class="nav-item my-auto">
+                        <a class="nav-link" aria-current="page" href="https://github.com/anw-sh" target="_blank" data-bs-toggle="tooltip", data-bs-placement="bottom", data-bs-title="Profile">
+                            <i class="bi bi-person-check"></i>
+                        </a>
+                    </li>
+                </ul>
+                
+                <a href="#" class="btn btn-warning rounded-2 disabled" type="submit"><span class="small">Balancer</span></a>
+               
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <section class="container my-3 p-5 px-lg-0">
+        <div class="row align-items-center gx-5 py-5">
+            <div class="col-lg-12 mx-auto">
+                <h1 class="h2 text-center text-info fw-medium">SILVA 138 Classifiers</h1>
+                <p class="text-center text-muted">Feature Classifiers for the variable regions of Prokaryotic 16S rRNA genes.</p>
+                
+                <!-- Links Row -->
+                <div class="row justify-content-between gap-4 mt-5 mb-4 h-100">
+                    <!-- Box left -->
+                    <div class="col card border-0 shadow rounded-4 p-4 text-muted bg-icon-tools">
+                        <p class="fw-medium card-title">
+                            DB & Pipeline
+                        </p>
+                        <hr class="w-50">
+                        <p class="card-text">
+                            <ul class="list-unstyled lead">
+                                <li>
+                                    <a href="https://www.arb-silva.de/fileadmin/silva_databases/release_138/Exports/SILVA_138_SSURef_NR99_tax_silva.fasta.gz" target="_blank" class="text-muted"><i class="bi bi-database-check"></i> SILVA 138 nr99 SSU</a>
+                                </li>
+                                <li>
+                                    <a href="https://docs.qiime2.org/2021.4/install/native/#install-qiime-2-within-a-conda-environment" class="text-muted"><i class="bi bi-boxes"></i> QIIME v2021.4</a>
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
+                    <!-- Box center -->
+                    <div class="col card border-0 shadow rounded-4 p-4 text-muted">
+                        <p class="fw-medium card-title">
+                            Docs
+                        </p>
+                        <hr class="w-50">
+                        <p class="card-text">
+                            <ul class="list-unstyled lead">
+                                <li>
+                                    <a href="https://docs.qiime2.org/2021.4/tutorials/feature-classifier/" target="_blank" class="text-muted"><i class="bi bi-arrow-right-circle"></i> Feature Classifier</a>
+                                </li>
+                                <li>
+                                    <a href="https://forum.qiime2.org/t/processing-filtering-and-evaluating-the-silva-database-and-other-reference-sequence-data-with-rescript/15494" target="_blank" class="text-muted"><i class="bi bi-arrow-right-circle"></i> RESCRIPt</a>
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
+                    <!-- Box right -->
+                    <div class="col card border-0 shadow rounded-4 p-4 text-muted">
+                        <p class="fw-medium card-title">
+                            Downloads
+                        </p>
+                        <hr class="w-50">
+                        <p class="card-text">
+                            <ul class="list-unstyled lead">
+                                <li>
+                                    <a href="https://mega.nz/folder/IK4E2LzZ#dj46fXExPySyvOSFMNtz0g" target="_blank" class="text-muted"><i class="bi bi-cloud-arrow-down fa-beat-fade"></i></i> MEGA</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.dropbox.com/scl/fo/vmkef5q5ijfj980j90hct/AIP8gjCJ99dm_0Xh2fnObe0?rlkey=shfsatjjcg3eh9izd5o1zu4hw&st=b5kbwceg&dl=0" class="text-muted"><i class="bi bi-dropbox fa-fade"></i> Dropbox</a>
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Workflow -->
+                <div class="row justify-content-between gap-4 mt-5">
+                    <div class="col rounded-4 p-4 text-muted">
+                        <h2 class="fs-5">Workflow</h2>
+                        <hr class="w-25">
+                        <ol>
+                            <!-- Step 1 -->
+                            <li class="mb-5">
+                                <p>Download SILVA data</p>
+                                <pre class="rounded-4 shadow"><code>qiime rescript get-silva-data --p-version '138' --p-target 'SSURef_NR99' --p-include-species-labels --o-silva-sequences silva-138-ssu-nr99-seqs.qza --o-silva-taxonomy silva-138-ssu-nr99-tax.qza</code></pre>
+                                <div class="alert alert-info fst-italic">
+                                    Taxonomy file has 7 levels as required and without gaps (all levels are labelled). Not performing the rank propagation step.
+                                </div>
+                            </li>
+                            <!-- Step 2 -->
+                            <li class="mb-5">
+                                <p>Remove low quality sequences</p>
+                                <pre class="rounded-4 shadow"><code>qiime rescript cull-seqs --i-sequences silva-138-ssu-nr99-seqs.qza --o-clean-sequences silva-138-ssu-nr99-seqs-cleaned.qza</code></pre>
+                            </li>
+                            <!-- Step 3 -->
+                            <li class="mb-5">
+                                <p>Remove Eukaryotic taxa</p>
+                                <pre class="rounded-4 shadow"><code>qiime taxa filter-seqs --i-sequences silva-138-ssu-nr99-seqs-cleaned.qza --i-taxonomy silva-138-ssu-nr99-tax.qza --p-exclude 'd__Eukaryota' --p-mode 'contains' --o-filtered-sequences silva138_noEuk_seqs.qza</code></pre>
+                            </li>
+                            <!-- Step 4 -->
+                            <li class="mb-5">
+                                <p>Filter by length</p>
+                                <div class="alert alert-light fst-italic">
+                                    Archaea, Bacteria & Eukaryota (900, 1200, 1400 bases) - Excluding Eukaryota as it was removed in the previous step.
+                                </div>
+                                <pre class="rounded-4 shadow"><code>qiime taxa filter-seqs --i-sequences silva-138-ssu-nr99-seqs-cleaned.qza --i-taxonomy silva-138-ssu-nr99-tax.qza --p-exclude 'd__Eukaryota' --p-mode 'contains' --o-filtered-sequences silva138_noEuk_seqs.qza</code></pre>
+                                <div class="alert alert-info fst-italic">
+                                    This step did not discard any more sequences.
+                                </div>
+                            </li>
+                            <!-- Step 5 -->
+                            <li class="mb-5">
+                                <p>Dereplicate</p>
+                                <div class="alert alert-light fst-italic">
+                                    Default mode - <code>uniq</code>; Default rank-handles - <code>silva</code>
+                                </div>
+                                <pre class="rounded-4 shadow"><code>qiime rescript dereplicate --i-sequences silva138_noEuk_AB_seqs.qza --i-taxa silva-138-ssu-nr99-tax.qza --p-threads 12 --o-dereplicated-sequences silva138_noEuk_AB_seqs_uniq.qza --o-dereplicated-taxa silva138_noEuk_AB_tax_uniq.qza</code></pre>
+                                <p>
+                                    Dereplicated Sequences: <a href="https://mega.nz/file/xaITGA7L#V9BtsBC9Zd61K0YLgEYJBNpc4WP4fuN4go01sneRhoI" target="_blank"> silva138_noEuk_AB_seqs_uniq.qza <i class="bi bi-file-arrow-down fa-fade"></i></a>
+                                    <br>
+                                    Dereplicated Taxa: <a href="https://mega.nz/file/IeZnxQ4L#MBreCSxvIa5WG1bSJy7brqo8glfhjDL87KYjqAcSEkw" target="_blank">silva138_noEuk_AB_tax_uniq.qza <i class="bi bi-file-arrow-down fa-beat-fade"></i></a>
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- Classifiers -->
+                <div class="row justify-content-between gap-4">
+                    <div class="col bg-light border-0 rounded-4 p-5">
+                        <h2 class="fs-5">Classifiers</h2>
+                        <hr class="w-25">
+                        <ul class="nav nav-pills" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link rounded-3 active" id="v1v2-tab" data-bs-toggle="tab" data-bs-target="#v1v2-tab-pane" type="button" role="tab" aria-controls="v1v2-tab-pane" aria-selected="true">V1-V2</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link rounded-3" id="v3-tab" data-bs-toggle="tab" data-bs-target="#v3-tab-pane" type="button" role="tab" aria-controls="v3-tab-pane" aria-selected="false">V3</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link rounded-3" id="v3v4-tab" data-bs-toggle="tab" data-bs-target="#v3v4-tab-pane" type="button" role="tab" aria-controls="v3v4-tab-pane" aria-selected="false">V3-V4</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link rounded-3" id="v4-tab" data-bs-toggle="tab" data-bs-target="#v4-tab-pane" type="button" role="tab" aria-controls="v4-tab-pane" aria-selected="false">V4</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link rounded-3" id="fl-tab" data-bs-toggle="tab" data-bs-target="#fl-tab-pane" type="button" role="tab" aria-controls="fl-tab-pane" aria-selected="false">Full Length</button>
+                            </li>
+                        </ul>
+                        <!-- V1-V2 -->
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane m-4 fade show active" id="v1v2-tab-pane" role="tabpanel" aria-labelledby="v1v2-tab" tabindex="0">
+                                <ol start="6">
+                                    <!-- Step 6 V1-V2 -->
+                                    <li class="mb-5">
+                                        <p>Extract the V1-V2 region</p>
+                                        <div class="alert alert-primary fst-italic">
+                                            Primers: 27f & 338r
+                                        </div>
+                                        <pre class="rounded-4 shadow"><code>qiime feature-classifier extract-reads --i-sequences silva138_noEuk_AB_seqs_uniq.qza --p-f-primer AGAGTTTGATCMTGGCTCAG --p-r-primer TGCTGCCTCCCGTAGGAGT --p-n-jobs 12 --o-reads silva138_AB_V1-V2seqs.qza</code></pre>
+                                        <p>
+                                            Output: <a href="https://mega.nz/file/cCwhxQZZ#DSMxha2NvwgqF5di_Xj1k0MMeB3cxeknrUjJfC_46RM" target="_blank">silva138_AB_V1-V2seqs.qza <i class="bi bi-file-arrow-down fa-fade"></i></a>
+                                        </p>
+                                    </li>
+                                    <!-- Step 7 V1-V2 -->
+                                    <li class="mb-5">
+                                        <p>Dereplicate the target region</p>
+                                        <pre class="rounded-4 shadow"><code>qiime rescript dereplicate --i-sequences silva138_AB_V1-V2seqs.qza --i-taxa silva138_noEuk_AB_tax_uniq.qza --o-dereplicated-sequences silva138_AB_V1-V2seqs_uniq.qza --o-dereplicated-taxa silva138_AB_V1-V2taxa_uniq.qza</code></pre>
+                                        <p>
+                                            Dereplicated Sequences: <a href="https://mega.nz/file/pGxiRTwA#o4erg0w7HgkUE3BMs1ua1o4aecdOIOZ2C76_q0Mu6GM" target="_blank">silva138_AB_V1-V2seqs_uniq.qza <i class="bi bi-file-arrow-down fa-fade"></i></a>
+                                            <br>
+                                            Dereplicated Taxa: <a href="https://mega.nz/file/dbp1yAQI#Y6AwXFv0KKRb_yzLew_iZFM3IDZRh6WI-RODETQV2v4" target="_blank">silva138_AB_V1-V2taxa_uniq.qza <i class="bi bi-file-arrow-down fa-beat-fade"></i></a>
+                                        </p>
+                                    </li>
+                                    <!-- Step 8 V1-V2 -->
+                                    <li class="mb-5">
+                                        <p>Classify & evaluate with RESCRIPt</p>
+                                        <div class="alert alert-primary fst-italic">
+                                            Using multiple threads increases <a href="https://forum.qiime2.org/t/memoryerror-when-running-feature-classifer-with-pre-trained-classifier/566/3" target="_blank">memory usage</a>. Using 1 thread with auto reads per batch (took approx 19 hrs)
+                                        </div>
+                                        <pre class="rounded-4 shadow"><code>qiime rescript evaluate-fit-classifier --i-sequences silva138_AB_V1-V2seqs_uniq.qza --i-taxonomy silva138_AB_V1-V2taxa_uniq.qza --o-classifier silva138_AB_V1-V2_classifier.qza --o-observed-taxonomy silva138_AB_V1-V2_predicted_taxonomy.qza --o-evaluation silva138_AB_V1-V2_classifier_eval.qzv</code></pre>
+                                        <p>
+                                            Classifier: <a href="https://mega.nz/file/IOoQUR4S#bra_ukhPfUpjJDwhkBIrmaIWkM53haC8G1zsfnKihck" target="_blank">silva138_AB_V1-V2_classifier.qza <i class="bi bi-file-arrow-down fa-fade"></i></a>
+                                            <br>
+                                            Predicted Taxonomy: <a href="https://mega.nz/file/kTxg1Z6I#80Gtezbctn3Q-e8-9wH-banMtVnnmeG0sXvtrcbAkq0" target="_blank">silva138_AB_V1-V2_predicted_taxonomy.qza <i class="bi bi-file-arrow-down fa-beat-fade"></i></a>
+                                            <br>
+                                            Evaluation: <a href="https://mega.nz/file/hDxwAJpL#e3NGbARvke3GZVPOkserr-Bz-qOJZ9E0HJYYLZo2QhA" target="_blank">silva138_AB_V1-V2_classifier_eval.qzv <i class="bi bi-file-arrow-down fa-beat-fade"></i></a>
+                                        </p>
+                                    </li>
+                                </ol>
+                            </div>
+                            <!-- V3 -->
+                            <div class="tab-pane m-4 fade" id="v3-tab-pane" role="tabpanel" aria-labelledby="v3-tab" tabindex="0">
+                                <ol start="6">
+                                    <!-- Step 6 V3 -->
+                                    <li class="mb-5">
+                                        <p>Extract the V3 region</p>
+                                        <div class="alert alert-info fst-italic">
+                                            Primers: 341f & 518r
+                                        </div>
+                                        <pre class="rounded-4 shadow"><code>qiime feature-classifier extract-reads --i-sequences silva138_noEuk_AB_seqs_uniq.qza --p-f-primer CCTACGGGNGGCWGCAG --p-r-primer GTATTACCGCGGCTGCTGG --p-n-jobs 12 --o-reads silva138_AB_V3seqs.qza</code></pre>
+                                        <p>
+                                            Output: <a href="https://mega.nz/file/FbxylRaI#OxZmLQU878fiTJI-YvRKwzoOy67HoXEkTGGlg8xP94I" target="_blank">silva138_AB_V3seqs.qza <i class="bi bi-file-arrow-down fa-beat-fade"></i></a>
+                                        </p>
+                                    </li>
+                                    <!-- Step 7 V3 -->
+                                    <li class="mb-5">
+                                        <p>Dereplicate the target region</p>
+                                        <pre class="rounded-4 shadow"><code>qiime rescript dereplicate --i-sequences silva138_AB_V3seqs.qza --i-taxa silva138_noEuk_AB_tax_uniq.qza --o-dereplicated-sequences silva138_AB_V3seqs_uniq.qza --o-dereplicated-taxa silva138_AB_V3taza_uniq.qza</code></pre>
+                                        <p>
+                                            Dereplicated Sequences: <a href="https://mega.nz/file/dSpCFLjb#Lun5LEj6GljOo_YN81Kn9Le14hzuFQzLUhdc4atLtHA" target="_blank">silva138_AB_V3seqs_uniq.qza <i class="bi bi-file-arrow-down fa-fade"></i></a>
+                                            <br>
+                                            Dereplicated Taxa: <a href="https://mega.nz/file/Abw0XbSL#mPBi4jO33aR9njoCY0UaYcdQY8XssQws4eaaP2BBWCk" target="_blank">silva138_AB_V3taxa_uniq.qza <i class="bi bi-file-arrow-down fa-beat-fade"></i></a>
+                                        </p>
+                                    </li>
+                                    <!-- Step 8 V3 -->
+                                    <li class="mb-5">
+                                        <p>Classify & evaluate with RESCRIPt</p>
+                                        <div class="alert alert-info fst-italic">
+                                            Using multiple threads increases <a href="https://forum.qiime2.org/t/memoryerror-when-running-feature-classifer-with-pre-trained-classifier/566/3" target="_blank">memory usage</a>. Using 1 thread with auto reads per batch (took approx 20 hrs)
+                                        </div>
+                                        <pre class="rounded-4 shadow"><code>qiime rescript evaluate-fit-classifier --i-sequences silva138_AB_V3seqs_uniq.qza --i-taxonomy silva138_AB_V3taxa_uniq.qza --o-classifier silva138_AB_V3_classifier.qza --o-observed-taxonomy silva138_AB_V3_predicted_taxonomy.qza --o-evaluation silva138_AB_V3_classifier_eval.qzv</code></pre>
+                                        <p>
+                                            Classifier: <a href="https://mega.nz/file/tD4wELQD#RCdoXEKBIGb07_pMugTesQCLjjfOJu24llJfzFUBKt8" target="_blank">silva138_AB_V3_classifier.qza <i class="bi bi-file-arrow-down fa-beat-fade"></i></a>
+                                            <br>
+                                            Predicted Taxonomy: <a href="https://mega.nz/file/sToynbrB#va9alyidk5pqhVMnqmwuZmUGXKbsY_xBhwei_-tF-K0" target="_blank">silva138_AB_V3_predicted_taxonomy.qza <i class="bi bi-file-arrow-down fa-fade"></i></a>
+                                            <br>
+                                            Evaluation: <a href="https://mega.nz/file/9OwwmZAK#L0B0TjdCEwJM340xGbs5f_dROOJPGAaSWqiRTkuqPGo" target="_blank">silva138_AB_V3_classifier_eval.qzv <i class="bi bi-file-arrow-down fa-beat-fade"></i></a>
+                                        </p>
+                                    </li>
+                                </ol>
+                            </div>
+                            <!-- V3-V4 -->
+                            <div class="tab-pane m-4 fade" id="v3v4-tab-pane" role="tabpanel" aria-labelledby="v3v4-tab" tabindex="0">
+                                <ol start="6">
+                                    <!-- Step 6 V3-V4 -->
+                                    <li class="mb-5">
+                                        <p>Extract the V3-V4 region</p>
+                                        <div class="alert alert-success fst-italic">
+                                            Primers: 341f & 805r
+                                        </div>
+                                        <pre class="rounded-4 shadow"><code>qiime feature-classifier extract-reads --i-sequences silva138_noEuk_AB_seqs_uniq.qza --p-f-primer CCTACGGGNGGCWGCAG --p-r-primer GACTACHVGGGTATCTAATCC --p-n-jobs 12 --o-reads silva138_AB_V3-V4seqs.qza</code></pre>
+                                        <p>
+                                            Output: <a href="https://mega.nz/file/1LQkVT4T#rzedpymo5dhnp9b6g39t5AOZW31bI2bYVidIalseK2I" target="_blank">silva138_AB_V3-V4seqs.qza <i class="bi bi-file-arrow-down fa-beat-fade"></i></a>
+                                        </p>
+                                    </li>
+                                    <!-- Step 7 V3-V4 -->
+                                    <li class="mb-5">
+                                        <p>Dereplicate the target region</p>
+                                        <pre class="rounded-4 shadow"><code>qiime rescript dereplicate --i-sequences silva138_AB_V3-V4seqs.qza --i-taxa silva138_noEuk_AB_tax_uniq.qza --o-dereplicated-sequences silva138_AB_V3-V4seqs_uniq.qza --o-dereplicated-taxa silva138_AB_V3-V4taxa_uniq.qza</code></pre>
+                                        <p>
+                                            Dereplicated Sequences: <a href="https://mega.nz/file/9XQShbLB#o_QZ7F-rtDdzPShHbCTptUWfLwBaRB3Ui1LC2bwWaYs" target="_blank">silva138_AB_V3-V4seqs_uniq.qza <i class="bi bi-file-arrow-down fa-beat-fade"></i></a>
+                                            <br>
+                                            Dereplicated Taxa: <a href="https://mega.nz/file/BaZmTZxT#Hzq5wHXpTU-68xf-413ifWNAfwCB2pp8hxSTgE4ulYM" target="_blank">silva138_AB_V3-V4taxa_uniq.qza <i class="bi bi-file-arrow-down fa-fade"></i></a>
+                                        </p>
+                                    </li>
+                                    <!-- Step 8 V3-V4 -->
+                                    <li class="mb-5">
+                                        <p>Classify & evaluate with RESCRIPt</p>
+                                        <div class="alert alert-success fst-italic">
+                                            Using multiple threads increases <a href="https://forum.qiime2.org/t/memoryerror-when-running-feature-classifer-with-pre-trained-classifier/566/3" target="_blank">memory usage</a>. Using 1 thread with auto reads per batch (took approx 30 hrs)
+                                        </div>
+                                        <pre class="rounded-4 shadow"><code>qiime rescript evaluate-fit-classifier --i-sequences silva138_AB_V3-V4seqs_uniq.qza --i-taxonomy silva138_AB_V3-V4taxa_uniq.qza --o-classifier silva138_AB_V3-V4_classifier.qza --o-observed-taxonomy silva138_AB_V3-V4_predicted_taxonomy.qza --o-evaluation silva138_AB_V3-V4_classifier_eval.qzv</code></pre>
+                                        <p>
+                                            Classifier: <a href="https://mega.nz/file/BeYUhb7A#G5AMi0IheVzJGGptlZhZM2cs6p9RO0FS-iWGF3fb1os" target="_blank">silva138_AB_V3-V4_classifier.qza <i class="bi bi-file-arrow-down fa-fade"></i></a>
+                                            <br>
+                                            Predicted Taxonomy: <a href="https://mega.nz/file/gbImBRiC#-S1yT08NhaOI1wScibaAdv_4jHBPbrZaaLnjjT8II48" target="_blank">silva138_AB_V3-V4_predicted_taxonomy.qza <i class="bi bi-file-arrow-down fa-beat-fade"></i></a>
+                                            <br>
+                                            Evaluation: <a href="https://mega.nz/file/VaRWDbKD#3OJyipfi1MM5eeFU1BxqMQuKuY33xX1USmykRsLGn-o" target="_blank">silva138_AB_V3-V4_classifier_eval.qzv <i class="bi bi-file-arrow-down fa-beat-fade"></i></a>
+                                        </p>
+                                    </li>
+                                </ol>
+                            </div>
+                            <!-- V4 -->
+                            <div class="tab-pane m-4 fade" id="v4-tab-pane" role="tabpanel" aria-labelledby="v4-tab" tabindex="0">
+                                <ol start="6">
+                                    <!-- Step 6 V4 -->
+                                    <li class="mb-5">
+                                        <p>Extract the V4 region</p>
+                                        <div class="alert alert-warning fst-italic">
+                                            Primers: 515f & 806r
+                                        </div>
+                                        <pre class="rounded-4 shadow"><code>qiime feature-classifier extract-reads --i-sequences silva138_noEuk_AB_seqs_uniq.qza --p-f-primer GTGYCAGCMGCCGCGGTAA --p-r-primer GGACTACNVGGGTWTCTAAT --p-n-jobs 12 --o-reads silva138_AB_V4seqs.qza</code></pre>
+                                        <p>
+                                            Output: <a href="https://mega.nz/file/JHgQmRIA#9lZfwBgzGWiWrCPFOJKbZaA21ecqC2K_8dKM2v8WkGQ" target="_blank">silva138_AB_V4seqs.qza <i class="bi bi-file-arrow-down fa-beat-fade"></i></a>
+                                        </p>
+                                    </li>
+                                    <!-- Step 7 V4 -->
+                                    <li class="mb-5">
+                                        <p>Dereplicate the target region</p>
+                                        <pre class="rounded-4 shadow"><code>qiime rescript dereplicate --i-sequences silva138_AB_V4seqs.qza --i-taxa silva138_noEuk_AB_tax_uniq.qza --o-dereplicated-sequences silva138_AB_V4seqs_uniq.qza --o-dereplicated-taxa silva138_AB_V4taxa-uniq.qza --p-threads 12</code></pre>
+                                        <p>
+                                            Dereplicated Sequences: <a href="https://mega.nz/file/Eahi3DZI#EjWrksgKgwGuGH4KWz9QGjIuIwXKSaUBo99ryAhaJzU" target="_blank">silva138_AB_V4seqs_uniq.qza <i class="bi bi-file-arrow-down fa-beat-fade"></i></a>
+                                            <br>
+                                            Dereplicated Taxa: <a href="https://mega.nz/file/5D5CSLDL#sHzTKdAhxd5BOvJ4TT-wwev1l4XAXFcFArH9jnEXcDc" target="_blank">silva138_AB_V4taxa_uniq.qza <i class="bi bi-file-arrow-down fa-fade"></i></a>
+                                        </p>
+                                    </li>
+                                    <!-- Step 8 V4 -->
+                                    <li class="mb-5">
+                                        <p>Classify & evaluate with RESCRIPt</p>
+                                        <div class="alert alert-warning fst-italic">
+                                            Using multiple threads increases <a href="https://forum.qiime2.org/t/memoryerror-when-running-feature-classifer-with-pre-trained-classifier/566/3" target="_blank">memory usage</a>. Using 1 thread with auto reads per batch (took approx 24 hrs)
+                                        </div>
+                                        <pre class="rounded-4 shadow"><code>qiime rescript evaluate-fit-classifier --i-sequences silva138_AB_V4seqs_uniq.qza --i-taxonomy silva138_AB_V4taxa-uniq.qza --p-reads-per-batch 10000 --o-classifier silva138_AB_V4_classifier.qza --o-observed-taxonomy silva138_AB_V4_predicted_taxonomy.qza --o-evaluation silva138_AB_V4_classifier_eval.qzv</code></pre>
+                                        <p>
+                                            Classifier: <a href="https://mega.nz/file/8S5wjZDC#32T4bG6QsUgHTAjlU0oP0d-51ZbctePwTMM4sWn_oyw" target="_blank">silva138_AB_V4_classifier.qza <i class="bi bi-file-arrow-down fa-fade"></i></a>
+                                            <br>
+                                            Predicted Taxonomy: <a href="https://mega.nz/file/xToi2BBY#Cywghlh5PNfnKg7F18E-6Qw8BkFOUDSaeyNIrrnt9Uw" target="_blank">silva138_AB_V4_predicted_taxonomy.qza <i class="bi bi-file-arrow-down fa-beat-fade"></i></a>
+                                            <br>
+                                            Evaluation: <a href="https://mega.nz/file/ZDwAnJgL#OVei4pRuHAzH2LVhJmFosQD2xeLAbgPq6xt-iFJ_IM8" target="_blank">silva138_AB_V4_classifier_eval.qzv <i class="bi bi-file-arrow-down fa-beat-fade"></i></a>
+                                        </p>
+                                    </li>
+                                </ol>
+                            </div>
+                            <!-- Full length -->
+                            <div class="tab-pane m-4 fade" id="fl-tab-pane" role="tabpanel" aria-labelledby="fl-tab" tabindex="0">
+                                <ol start="6">
+                                    <li class="mb-5">
+                                        <p>Classifying & evaluating with RESCRIPt</p>
+                                        <div class="alert alert-danger fst-italic">
+                                            This step was performed with <code>qiime_2023.5</code> on a Fedora 39 server
+                                        </div>
+                                        <pre class="rounded-4 shadow"><code>qiime rescript evaluate-fit-classifier --i-sequences silva138_noEuk_AB_seqs_uniq.qza --i-taxonomy silva138_noEuk_AB_tax_uniq.qza --o-classifier silva138_noEuk_AB_classifier.qza --o-observed-taxonomy silva138_noEuk_AB_predicted_taxonomy.qza --o-evaluation silva138_noEuk_AB_classifier_eval.qzv --p-n-jobs 10</code></pre>
+                                        <p>
+                                            Classifier: <a href="https://mega.nz/file/4GAkjKyK#-sKjy5z8BoO-FKvqYRZQm3zPUL4xKcJT4w5nmqil7Jk" target="_blank">silva138_noEuk_AB_classifier.qza <i class="bi bi-file-arrow-down fa-beat-fade"></i></a>
+                                            <br>
+                                            Predicted Taxonomy: <a href="https://mega.nz/file/0ao0QY7B#hzLrBzrn4pZgPRAKYGOYJBFC89Co7TNEc2yIvogKM_c" target="_blank">silva138_noEuk_AB_predicted_taxonomy.qza <i class="bi bi-file-arrow-down fa-beat-fade"></i></a>
+                                            <br>
+                                            Evaluation: <a href="https://mega.nz/file/wL5CSBRJ#GVaWH9FbRSemePdF9y1AM2CTiPyd1WzHq9rdz2gUFKU" target="_blank">silva138_noEuk_AB_classifier_eval.qzv <i class="bi bi-file-arrow-down fa-fade"></i></a>
+                                        </p>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- System Specs -->
+                <div class="row mt-5 gap-4">
+                    <div class="col p-4 text-muted">
+                        <h2 class="fs-5">System configuration</h2>
+                        <p class="small">(Except for the full-length classifier)</p>
+                        <ul class="mt-3 list-group list-group-horizontal">
+                            <li class="list-group-item">OS: <i class="fa-brands fa-fedora text-info"></i></li>
+                            <li class="list-group-item">RAM: 16GB</li>
+                            <li class="list-group-item">CPU: AMD Ryzen 4600H (6C/12T)</li>
+                            <li class="list-group-item">SWAP: 50GB</li>
+                            <li class="list-group-item"><code>tmp</code>: 50GB</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- References -->
+                <div class="row mt-5 gap-4">
+                    <div class="col p-4 text-muted">
+                        <h2 class="fs-5">References</h2>
+                        <hr class="w-25">
+                        <ol class="mt-4">
+                            <li>Reproducible, interactive, scalable and extensible microbiome data science using QIIME 2. <a href="https://doi.org/10.1038/s41587-019-0209-9" target="_blank">https://doi.org/10.1038/s41587-019-0209-9</a></li>
+                            <li>RESCRIPt: Reproducible sequence taxonomy reference database management <a href="https://doi.org/10.1371/journal.pcbi.1009581" target="_blank">https://doi.org/10.1371/journal.pcbi.1009581</a></li>
+                            <li>The SILVA ribosomal RNA gene database project: improved data processing and web-based tools <a href="https://doi.org/10.1093/nar/gks1219" target="_blank">https://doi.org/10.1093/nar/gks1219</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <div class="col-10 mx-auto">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-5 my-3 border-top">
+            <!-- Left -->
             <p class="col-lg-4 mb-0 text-muted">
-                <script>document.write(/\d{4}/.exec(Date())[0])</script>
+                <script>document.write(/\d{4}/.exec(Date())[0])</script> |
+                <a href="../index.html" class="link-dark special-text">
+                    <span class="fw-medium">an</span><span class="fw-light">V</span>
+                </a>
             </p>
-        
-            <a href="index.html" class="col-lg-4 d-flex align-items-center justify-content-center me-md-auto link-dark special-text"><span class="fw-medium">an</span><span class="fw-light">V</span>
-                <!-- <img src="assets/images/Logos/Logo_INCEN_Black120.png" alt=""> -->
-            </a>
-      
+            <!-- Center -->
+            <ul class="nav col-lg-4 justify-content-center lead">
+                <li class="nav-item">
+                    <a href="https://www.linkedin.com/in/anwesh-maile-85346a27/" target="_blank" class="nav-link px-2 text-muted"><i class="fa-brands fa-linkedin"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://github.com/anw-sh" target="_blank" class="nav-link px-2 text-muted"><i class="fa-brands fa-github"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://scholar.google.com/citations?user=X885VYAAAAAJ&hl=en" target="_blank" class="nav-link px-2 text-muted"><i class="fa-brands fa-google-scholar"></i></a>
+                </li>
+            </ul>
+            <!-- Right -->
             <ul class="nav col-lg-4 justify-content-end">
-                <!-- <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">Home</a></li> -->
-                <!-- <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Genomics</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Metagenomics</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Others</a></li> -->
-                <li class="nav-item"><a href="https://github.com/anw-sh" class="nav-link px-2 text-muted">Anwesh Maile</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-muted">
+                        Ampli-seq analysis <i class="bi bi-caret-right-fill"></i>
+                    </a>
+                </li>
             </ul>
         </footer>
     </div>
     
     <!-- Bootstrap Bundle JS -->
-    <script src="assets/js/bootstrap.bundle.js"></script>
+    <script src="../assets/js/bootstrap.bundle.js"></script>
 
     <!-- Highlight JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
@@ -68,6 +499,6 @@
     <script src="https://kit.fontawesome.com/64b7be69f4.js" crossorigin="anonymous"></script>
 
     <!-- Custom JS -->
-    <script src="assets/js/extended.js"></script>
+    <script src="../assets/js/extended.js"></script>
 </body>
 </html>
